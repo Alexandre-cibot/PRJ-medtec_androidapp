@@ -9,7 +9,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.echopen.asso.echopen.ScannerActivity;
+import com.echopen.asso.echopen.MainActivity;
 import com.echopen.asso.echopen.R;
 import com.echopen.asso.echopen.model.Data.BitmapDisplayerFactory;
 import com.echopen.asso.echopen.utils.Constants;
@@ -56,17 +56,17 @@ public class ConstantDialogFragment extends DialogFragment {
                                     Constants.PreProcParam.NUM_SAMPLES = Constants.PreProcParam.LOCAL_NUM_SAMPLES;
                                     Constants.PreProcParam.NUM_IMG_DATA = Constants.PreProcParam.LOCAL_IMG_DATA;
                                     Constants.PreProcParam.SCALE_IMG_FACTOR = Constants.PreProcParam.LOCAL_SCALE_IMG_FACTOR;
-                                    ScannerActivity.LOCAL_ACQUISITION = true;
+                                    MainActivity.LOCAL_ACQUISITION = true;
                                 } else if (constantProtocol[0] == 1) {
                                     Constants.PreProcParam.NUM_SAMPLES = Constants.PreProcParam.TCP_NUM_SAMPLES;
                                     Constants.PreProcParam.NUM_IMG_DATA = Constants.PreProcParam.TCP_IMG_DATA;
                                     Constants.PreProcParam.SCALE_IMG_FACTOR = Constants.PreProcParam.TCP_SCALE_IMG_FACTOR;
-                                    ScannerActivity.TCP_ACQUISITION = true;
+                                    MainActivity.TCP_ACQUISITION = true;
                                 } else if (constantProtocol[0] == 2) {
                                     Constants.PreProcParam.NUM_SAMPLES = Constants.PreProcParam.UDP_NUM_SAMPLES;
                                     Constants.PreProcParam.NUM_IMG_DATA = Constants.PreProcParam.UDP_IMG_DATA;
                                     Constants.PreProcParam.SCALE_IMG_FACTOR = Constants.PreProcParam.UDP_SCALE_IMG_FACTOR;
-                                    ScannerActivity.UDP_ACQUISITION = true;
+                                    MainActivity.UDP_ACQUISITION = true;
                                 }
 
                             } catch (Exception e) {
@@ -80,11 +80,10 @@ public class ConstantDialogFragment extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         // todo : to be completed filters in action
-                        ScannerActivity activity = (ScannerActivity) getActivity();
+                        MainActivity activity = (MainActivity) getActivity();
                         LoadConfigTask loadConfigTask = new LoadConfigTask(activity);
                         loadConfigTask.execute();
                         BitmapDisplayerFactory bitmapDisplayerFactory = new BitmapDisplayerFactory();
-                        activity.fetchData(bitmapDisplayerFactory);
                     }
                 })
                 .setNegativeButton(getResources().getString(R.string.cancel_dialog), new DialogInterface.OnClickListener() {

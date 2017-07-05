@@ -1,54 +1,67 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/main_activity_bg"
-    android:weightSum="1">
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="304dp"
-        android:layout_height="263dp"
-        android:layout_weight="0.97">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="23dp"
-            app:srcCompat="@drawable/echopen"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="80dp" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/bottom_layout"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="274dp"
-        android:layout_gravity="center">
+        android:layout_height="match_parent"
+        android:id="@+id/echo"
+        />
 
-        <Button
-            android:id="@+id/new_patient"
-            android:layout_width="219dp"
+    <LinearLayout
+            android:id="@+id/vBottom"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="94dp"
-            android:text="@string/main_activity_bt_new_patient"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+        android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="5dp"
+        android:weightSum="1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
 
-        <Button
-            android:id="@+id/patient_folders"
-            android:layout_width="200dp"
+
+        <RelativeLayout
+            android:id="@+id/bottom_nav"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/main_activity_bt_old_patient"
-            android:layout_marginTop="21dp"
-            android:layout_below="@+id/new_patient"
-            android:layout_alignStart="@+id/new_patient"
-            android:layout_alignEnd="@+id/new_patient" />
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:weightSum="1">
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="32dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="12dp"
+                android:src="@drawable/settings"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/btnCapture"
+                android:layout_width="43dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_weight="0.01"
+                android:background="@drawable/capture_vid_btn"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
 
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="36dp"
+                android:layout_height="30dp"
+                android:src="@drawable/gallery"
+                android:layout_centerVertical="true"
+                android:layout_alignTop="@+id/imageView2"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>
